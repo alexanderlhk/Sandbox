@@ -35,3 +35,25 @@ myBike.startVehicle();
 
 const myTruck = new Vehicle();
 myTruck.startVehicle();
+
+// What are Classes, Objects, and Constructors? - https://www.youtube.com/watch?v=5AWRivBk0Gw&t=0s
+
+class House {
+    constructor(colour) {
+        this.colour = colour;
+    }
+
+    getFurniture() {
+        return `${this.colour} sofa`;
+    }
+}
+
+const houseObject = new House('red');
+const houseObject2 = new House('blue');
+
+console.log(houseObject.colour);
+console.log(houseObject2.colour);
+console.log(houseObject.getFurniture());
+console.log(houseObject2.getFurniture());
+
+
