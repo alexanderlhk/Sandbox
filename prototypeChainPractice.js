@@ -57,3 +57,38 @@ objMonster.attack();
 objMonster.walk();
 objMonster.swim();
 objMonster.fly();
+
+// Optional Chaining ES2020
+console.log(myObject?.greet()) // Greetings, Alex
+console.log(myObject?.fly) // undefined
+console.log(myObject.flyer)
+
+// https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Object_prototypes
+
+const personPrototype = {
+    greet() {
+        console.log('Hello!');
+    },
+};
+
+const carl = Object.create(personPrototype);
+carl.greet(); // Hello!
+
+// Using Constructors
+
+const personPrototype2 = {
+    greet() {
+        console.log(`Hello, my name is ${this.name}`);
+    },
+};
+
+function Person(name) {
+    this.name = name;
+}
+
+Object.assign(Person.prototype, personPrototype2);
+
+personPrototype2.greet(); // Hello, ny name is undefined
+
+const alex = new Person('Alex');
+alex.greet(); // Hello, my name is Alex
