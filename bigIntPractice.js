@@ -7,3 +7,4 @@ let smallNum = Number.MIN_SAFE_INTEGER;
 
 console.log(largeNum);
 console.log(smallNum);
+
