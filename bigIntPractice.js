@@ -7,4 +7,31 @@ let smallNum = Number.MIN_SAFE_INTEGER;
 
 console.log(largeNum);
 console.log(smallNum);
+console.log(Number.isSafeInteger(largeNum));
 
+largeNum++;
+
+console.log(largeNum);
+console.log(smallNum);
+console.log(Number.isSafeInteger(largeNum));
+
+largeNum++;
+
+console.log(largeNum);
+console.log(smallNum);
+console.log(Number.isSafeInteger(largeNum));
+
+// Added bigInt function, an "n" will appear at the end of the result.
+let largerNum = BigInt(Number.MAX_SAFE_INTEGER);
+let smallerNum = BigInt(Number.MIN_SAFE_INTEGER);
+
+console.log(largerNum);
+console.log(smallerNum);
+console.log(Number.isSafeInteger(largerNum)); // displays false because it's no longer an integer. It's now a BigInt value. e.g. '9007199254740991n'
+
+largerNum++;
+largerNum++;
+
+console.log(largerNum); //9007199254740993n
+console.log(smallerNum);
+console.log(Number.isSafeInteger(largerNum)); //false
