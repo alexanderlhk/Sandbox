@@ -35,3 +35,10 @@ largerNum++;
 console.log(largerNum); //9007199254740993n
 console.log(smallerNum);
 console.log(Number.isSafeInteger(largerNum)); //false
+
+// Manually create a BigInt
+
+let ownBigInteger = 90071992n //can be any number, large or small.
+console.log(ownBigInteger); 
+console.log(Number.isSafeInteger(ownBigInteger)); //false, as it's no loner an integer but a BigInt
+console.log(typeof(ownBigInteger)); //bigint
