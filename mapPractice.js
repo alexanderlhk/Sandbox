@@ -23,4 +23,14 @@ console.log(myMap.size); //2
 myMap.clear(); // clears entire Map object
 console.log(myMap.size); //0
 
+// Wrong way to create key-value pairs in Maps
 
+const wrongMap = new Map();
+wrongMap["bla"] = "blaa";
+wrongMap["bla2"] = "blaaa2";
+
+console.log(wrongMap); // Map { bla: 'blaa', bla2: 'blaaa2' }
+
+wrongMap.has("bla"); // false
+wrongMap.delete("bla"); // false
+console.log(wrongMap); // Map { bla: 'blaa', bla2: 'blaaa2' }
