@@ -56,3 +56,10 @@ quote
 // If you want to get all the symbols in an object,
 
 console.log(Object.getOwnPropertySymbols(characterWithSymbols)); // [Symbol(admin)]
+
+/*
+Well known symbols
+- Symbol.asynclterator
+- Symbol.iterator
+- Symbol.toString Tag
+*/
