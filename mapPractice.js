@@ -17,7 +17,7 @@ myMap.set("a", 97);
 console.log(myMap.get("a")); //97
 console.log(myMap.size); //3
 
-myMap.delete("a"); // delete a key pair
+myMap.delete("a"); // delete a key-value pair
 console.log(myMap.size); //2
 
 myMap.clear(); // clears entire Map object
