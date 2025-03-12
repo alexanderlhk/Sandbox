@@ -58,8 +58,33 @@ quote
 console.log(Object.getOwnPropertySymbols(characterWithSymbols)); // [Symbol(admin)]
 
 /*
-Well known symbols
+Well known symbol properties
 - Symbol.asynclterator
-- Symbol.iterator
-- Symbol.toString Tag
+- Symbol.iterator // iterator 'for... of'
+- Symbol.toString Tag // gives a string representation of the object
 */
+
+// Symbol.iterator property
+
+const characterWithSymbolIterator = {
+    name: "Rick Axley",
+    class: "Axe Wielder",
+    quote: "I'll never let you down",
+    [Symbol.iterator]: function* () {
+        yield 1;
+        yield 2;
+        yield "Hello";
+    },
+}
+
+for (const value of characterWithSymbolIterator) { // use 'of' instead of 'in'
+    console.log(value);
+}
+
+/*
+1
+2
+Hello
+*/
+
+console.log(Object.getOwnPropertySymbols(characterWithSymbolIterator)); // [ Symbol(Symbol.iterator) ]
