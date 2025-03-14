@@ -14,6 +14,8 @@ console.log('Second test:');
 
 testFunction();
 
+outerFunction('Hello from outside')?.('Hello from inside')?.('test'); // use ?. to test and does not give an error when it does not exist.
+
 
 /*
 Dissecting outerFunction
@@ -128,3 +130,53 @@ The inner function, returned by the outer function, remembers that environment.
 You immediately invoke the returned function.
 You were spot on in recognizing this equivalence. It's a great indication that you're understanding closures very well!
 */
+
+
+// CURRYING: Currying is the technique of transforming a function that takes multiple arguments into a sequence of functions that each take a single argument.
+
+function add(x, y, z) {
+    return x + y + z;
+}
+
+function curriedAdd(x) {
+    return function (y) {
+        return function (z) {
+            return x + y + z;
+        };
+    };
+}
+
+console.log(add(1, 2, 3)); // Output: 6
+console.log(curriedAdd(1)(2)(3)); // Output: 6
+
+// No Change in Functionality: The core behavior of currying is unaffected by the names of the nested functions. The output of curriedAdd(1)(2)(3) is still 6.
+// Currying is about the structure of the function calls (each function taking one argument and returning another function). The names of the inner functions are just internal implementation details.
+
+// The Chain Matters: What matters for currying to work is that each function in the chain does these two things:
+// 1. Takes one argument.
+// 2. Returns another function.
+
+// Currying functions can also take more than 1 arguement
+
+function curriedAddFour(x, y) {
+    return function (z, w) {
+        return x + y + z + w;
+    };
+}
+
+console.log(curriedAddFour(1, 2)(3, 4)); // Output: 10
+
+const partiallyApplied = curriedAddFour(5, 5); // partiallyApplied = function (z, w) {return 5+5+z+w}
+console.log(partiallyApplied(1, 2)) // 13
+
+// You can even mix things up, having some steps take one argument and other steps take multiple arguments:
+
+function curriedAddFourMixed(x) {
+    return function (y, z) {
+        return function (w) {
+            return x + y + z + w;
+        };
+    };
+}
+
+console.log(curriedAddFourMixed(1)(2, 3)(4)); // Output: 10
