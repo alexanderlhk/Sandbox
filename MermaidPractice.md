@@ -83,4 +83,32 @@ mindmap
 ```mermaid
 timeline
     title History of Social Media Platforms
+    section First Section
+        2001 : Linkedin <br> is the best
+        %% use <br> for line breaks
+        2002 : Facebook
+                : Google
+    section Second Section
+    2004 : Instagram
+    2006 : Twitter
+         : Vimeo : Olo
+```
+
+<!-- Quadrant Chart -->
+```mermaid
+quadrantChart
+title Companies
+x-axis Low Scale --> High Scale
+y-axis Low Capital Requirements --> High Capital Requirements
+quadrant-1 Unicorns
+quadrant-2 Cash Cow
+quadrant-3 Zombie
+quadrant-4 Goldilocks
+Company A: [0.3, 0.6] radius: 10, color: #fc0900
+Company B: [0.4, 0.8] radius: 22, color: #ff9c00
+```
+
+<!-- Sankey Diagram -->
+```mermaid
+
 ```
