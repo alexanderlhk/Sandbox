@@ -81,6 +81,12 @@ mindmap
 
 <!-- Timeline -->
 ```mermaid
+---
+config:
+    look: handDrawn
+    theme: dark
+---
+%% to get the hand drawn look use configuration.
 timeline
     title History of Social Media Platforms
     section First Section
@@ -108,7 +114,30 @@ Company A: [0.3, 0.6] radius: 10, color: #fc0900
 Company B: [0.4, 0.8] radius: 22, color: #ff9c00
 ```
 
-<!-- Sankey Diagram -->
+<!-- Entity Relationship Diagram -->
 ```mermaid
+---
+title: Test ER Diagram
+---
+erDiagram
+    Customer ||--o{ Order : places
+    Order ||--|{ "Line Item" : contains
+    %% use double quotes for names with spaces
+    Customer }|..|{ Delivery-Address : uses
+%% Syntax:     <first-entity> [<relationship> <second-entity> : <relationship-label>]
 
 ```
+<!-- 
+Relationship Syntax Legend
+|o	o|	Zero or one
+||	||	Exactly one
+}o	o{	Zero or more (no upper limit)
+}|	|{	One or more (no upper limit)
+--	identifying
+..	non-identifying
+to	identifying
+optionally to	non-identifying
+
+-->
+
+<!-- Gantt -->
