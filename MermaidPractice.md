@@ -147,11 +147,16 @@ gantt
     dateFormat DD-MM-YYYY
     section First Section
         A task : a1, 01-01-2025, 12d
-        B task : after a1, 20d
+        B task : done, after a1, 20d
     section Second Section
-        C task : 01-01-2025, 15d
-        D task : 24d
+        C task : crit, 01-01-2025, 15d
+        D task : active, 24d
+        E task : milestone, 15-01-2025, 2d
 ```
+<!-- 
+Valid Gantt Tags:
+    active, done, crit, milestone
+-->
 
 <!--
 Gantt Syntax
