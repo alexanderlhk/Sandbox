@@ -34,3 +34,33 @@ console.log(wrongMap); // Map { bla: 'blaa', bla2: 'blaaa2' }
 wrongMap.has("bla"); // false
 wrongMap.delete("bla"); // false
 console.log(wrongMap); // Map { bla: 'blaa', bla2: 'blaaa2' }
+
+// Creating a map
+
+const users = new Map();
+users.set(1, { name: "Alex", Age: 25 }); // Adding a new key-value pair to the map
+users.set(2, { name: "Jim", Age: 30 });
+console.log(users);
+/*
+Output:
+
+Map(2) {
+  1 => { name: 'Alex', Age: 25 },
+  2 => { name: 'Jim', Age: 30 }
+}
+*/
+
+const user2 = users.get(2); // Access user by ID
+console.log(user2); // { name: 'Jim', Age: 30 }
+
+users.delete(1); // Remove user 1 by ID
+console.log(users); // Map(1) { 2 => { name: 'Jim', Age: 30 } }
+
+
+// Syntax of Map() constructor
+/*
+const myMap = new Map([
+    ['key1', 'value1'],
+    ['key2', 'value2']
+]);
+*/
