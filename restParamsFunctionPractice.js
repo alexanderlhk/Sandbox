@@ -27,3 +27,18 @@ myFun("one", "two", "three", "four", "five", "six");
 // a, one
 // b, two
 // manyMoreArgs, ["three", "four", "five", "six"]
+
+myFun(1, 2);
+// a 1
+// b 2
+// manyMoreArgs [] - Empty array given
+
+
+
+function ignoreFirst(...[, b, c]) {
+  console.log(b + c);
+  return b + c;
+}
+
+ignoreFirst(1, 2, 3); // 5
+ignoreFirst(4, 5, 6, 7, 8); // 11 - Ignores 4, 7 and 8
